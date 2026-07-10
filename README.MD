@@ -120,6 +120,6 @@ src/
 └── server.ts
 ```
 
-## Autor
-
+## Autor 
+#### Alan Dias 
 Projeto desenvolvido para fins de estudo com Node.js, Fastify e TypeScript.
