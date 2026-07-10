@@ -5,88 +5,114 @@ import cors from "@fastify/cors";
 const server = fastify({ logger: false });
 
 server.register(cors, {
-  origin: "*" // Essa linha significa que qualquer pessoa pode acessar a API
+  origin: "*"
 });
 
-const movies = [
+const teams = [
   {
     id: 1,
-    title: "Interestelar",
-    genre: "Ficção Científica",
-    year: 2014,
-    directorId: 1,
-    duration: 169,
-    rating: 8.7
+    name: "McLaren",
+    country: "Reino Unido",
+    base: "Woking",
+    championships: 9
   },
   {
     id: 2,
-    title: "Batman Begins",
-    genre: "Ação",
-    year: 2005,
-    directorId: 1,
-    duration: 140,
-    rating: 8.2
+    name: "Ferrari",
+    country: "Itália",
+    base: "Maranello",
+    championships: 16
   },
   {
     id: 3,
-    title: "O Poderoso Chefão",
-    genre: "Drama",
-    year: 1972,
-    directorId: 2,
-    duration: 175,
-    rating: 9.2
+    name: "Mercedes",
+    country: "Alemanha",
+    base: "Brackley",
+    championships: 8
   }
 ];
 
-const directors = [
+const drivers = [
   {
     id: 1,
-    name: "Christopher Nolan",
-    nationality: "Britânico"
+    name: "Lando Norris",
+    nationality: "Britânico",
+    teamId: 1,
+    championships: 0
   },
   {
     id: 2,
-    name: "Francis Ford Coppola",
-    nationality: "Americano"
+    name: "Charles Leclerc",
+    nationality: "Monegasco",
+    teamId: 2,
+    championships: 0
+  },
+  {
+    id: 3,
+    name: "George Russell",
+    nationality: "Britânico",
+    teamId: 3,
+    championships: 0
   }
 ];
 
-server.get("/movies", async (request, response) => {
-  const { genre } = request.query as { genre?: string };
+// Listar equipes
+server.get("/teams", async (request, response) => {
+  const { country } = request.query as { country?: string };
 
-  if (genre) {
-    const filteredMovies = movies.filter(movie => movie.genre === genre);
+  if (country) {
+    const filteredTeams = teams.filter(team => team.country === country);
 
     response.type("application/json").code(200);
-    return filteredMovies;
+    return filteredTeams;
   }
 
   response.type("application/json").code(200);
-  return movies;
+  return teams;
 });
 
-server.get("/directors", async (request, response) => {
-  response.type("application/json").code(200);
-
-  return [{ directors }];
-});
-
-interface MoviesParams {
+// Buscar equipe por ID
+interface TeamParams {
   id: string;
 }
 
-server.get<{ Params: MoviesParams }>("/movies/:id", async (request, response) => {
+server.get<{ Params: TeamParams }>("/teams/:id", async (request, response) => {
   const id = parseInt(request.params.id);
 
-  const movie = movies.find(m => m.id === id);
+  const team = teams.find(team => team.id === id);
 
-  if (!movie) {
+  if (!team) {
     response.type("application/json").code(404);
-    return { message: "Filme não encontrado" };
+    return { message: "Equipe não encontrada" };
   }
 
   response.type("application/json").code(200);
-  return { movie };
+  return { team };
+});
+
+// Listar pilotos
+server.get("/drivers", async (request, response) => {
+  response.type("application/json").code(200);
+  return drivers;
+});
+
+// Buscar piloto por ID
+interface DriverParams {
+  id: string;
+}
+
+server.get<{ Params: DriverParams }>("/drivers/:id", async (request, response) => {
+  const id = parseInt(request.params.id);
+
+  const driver = drivers.find(driver => driver.id === id);
+
+  if (!driver) {
+    response.type("application/json").code(404);
+    return { message: "Piloto não encontrado" };
+  }
+
+  response.type("application/json").code(200);
+  return { driver };
 });
 
 server.listen({ port: 3333 }, () => {

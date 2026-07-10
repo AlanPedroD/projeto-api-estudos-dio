@@ -1,6 +1,6 @@
-# Movies API
+# 🏎️ Formula 1 API
 
-Uma API REST simples desenvolvida com Node.js, Fastify e TypeScript para estudo de conceitos básicos de desenvolvimento de APIs.
+Uma API REST simples desenvolvida com **Node.js**, **Fastify** e **TypeScript** para fins de estudo.
 
 ## Tecnologias
 
@@ -14,13 +14,13 @@ Uma API REST simples desenvolvida com Node.js, Fastify e TypeScript para estudo 
 Clone o repositório:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
 ```
 
-Acesse a pasta do projeto:
+Entre na pasta do projeto:
 
 ```bash
-cd movies-api
+cd NOME-DO-REPOSITORIO
 ```
 
 Instale as dependências:
@@ -37,27 +37,89 @@ Modo de desenvolvimento:
 npm run start:watch
 ```
 
-Versão compilada:
+O servidor será iniciado em:
 
-```bash
-npm run start:dist
-```
-
-A API será iniciada em:
-
-```
+```text
 http://localhost:3333
 ```
 
 ## Endpoints
 
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| GET | `/movies` | Lista todos os filmes |
-| GET | `/movies?genre=Drama` | Filtra filmes por gênero |
-| GET | `/movies/:id` | Busca um filme pelo ID |
-| GET | `/directors` | Lista todos os diretores |
+### Listar todas as equipes
+
+```http
+GET /teams
+```
+
+Exemplo:
+
+```http
+http://localhost:3333/teams
+```
+
+---
+
+### Filtrar equipes por país
+
+```http
+GET /teams?country=Itália
+```
+
+Exemplo:
+
+```http
+http://localhost:3333/teams?country=Itália
+```
+
+---
+
+### Buscar equipe pelo ID
+
+```http
+GET /teams/:id
+```
+
+Exemplo:
+
+```http
+http://localhost:3333/teams/1
+```
+
+---
+
+### Listar todos os pilotos
+
+```http
+GET /drivers
+```
+
+Exemplo:
+
+```http
+http://localhost:3333/drivers
+```
+
+---
+
+### Buscar piloto pelo ID
+
+```http
+GET /drivers/:id
+```
+
+Exemplo:
+
+```http
+http://localhost:3333/drivers/2
+```
+
+## Estrutura do projeto
+
+```
+src/
+└── server.ts
+```
 
 ## Autor
 
-Projeto desenvolvido para fins de estudo utilizando Node.js, Fastify e TypeScript.
+Projeto desenvolvido para fins de estudo com Node.js, Fastify e TypeScript.
