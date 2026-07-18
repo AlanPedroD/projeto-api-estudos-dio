@@ -1,26 +1,41 @@
-# 🏎️ Formula 1 API
+# 🏎️ F1 Dashboard API
 
-Uma API REST simples desenvolvida com **Node.js**, **Fastify** e **TypeScript** para fins de estudo.
+Projeto desenvolvido durante os estudos de **Node.js** e **TypeScript**, acompanhando um curso sobre criação de APIs com **Fastify**.
 
-## Tecnologias
+A aplicação disponibiliza uma API simples com informações sobre equipes e pilotos da Fórmula 1 e também possui uma interface web para consumir esses dados.
 
-- Node.js
-- TypeScript
-- Fastify
-- @fastify/cors
+## 🚀 Tecnologias utilizadas
 
-## Instalação
+* Node.js
+* TypeScript
+* Fastify
+* HTML5
+* CSS3
+* JavaScript
+
+## 📂 Funcionalidades
+
+* Listar equipes de Fórmula 1
+* Buscar uma equipe pelo ID
+* Listar pilotos
+* Buscar um piloto pelo ID
+* Interface web para visualizar os dados da API
+
+## 📡 Endpoints
+
+| Método | Endpoint       | Descrição                |
+| ------ | -------------- | ------------------------ |
+| GET    | `/teams`       | Lista todas as equipes   |
+| GET    | `/teams/:id`   | Busca uma equipe pelo ID |
+| GET    | `/drivers`     | Lista todos os pilotos   |
+| GET    | `/drivers/:id` | Busca um piloto pelo ID  |
+
+## ▶️ Como executar o projeto
 
 Clone o repositório:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
-```
-
-Entre na pasta do projeto:
-
-```bash
-cd NOME-DO-REPOSITORIO
+git clone <URL_DO_REPOSITORIO>
 ```
 
 Instale as dependências:
@@ -29,97 +44,30 @@ Instale as dependências:
 npm install
 ```
 
-## Executando o projeto
-
-Modo de desenvolvimento:
+Inicie a aplicação:
 
 ```bash
-npm run start:watch
+npm run dev
 ```
 
-O servidor será iniciado em:
+Abra o navegador em:
 
-```text
+```
 http://localhost:3333
 ```
 
-## Endpoints
+## 📸 Interface
 
-### Listar todas as equipes
+A página inicial permite visualizar as equipes e os pilotos através dos botões disponíveis na interface.
 
-```http
-GET /teams
-```
+> Após iniciar a aplicação, basta acessar `http://localhost:3333` no navegador.
 
-Exemplo:
+## 📚 Objetivo
 
-```http
-http://localhost:3333/teams
-```
+Este projeto foi desenvolvido com fins de aprendizado, colocando em prática conceitos como:
 
----
-
-### Filtrar equipes por país
-
-```http
-GET /teams?country=Itália
-```
-
-Exemplo:
-
-```http
-http://localhost:3333/teams?country=Itália
-```
-
----
-
-### Buscar equipe pelo ID
-
-```http
-GET /teams/:id
-```
-
-Exemplo:
-
-```http
-http://localhost:3333/teams/1
-```
-
----
-
-### Listar todos os pilotos
-
-```http
-GET /drivers
-```
-
-Exemplo:
-
-```http
-http://localhost:3333/drivers
-```
-
----
-
-### Buscar piloto pelo ID
-
-```http
-GET /drivers/:id
-```
-
-Exemplo:
-
-```http
-http://localhost:3333/drivers/2
-```
-
-## Estrutura do projeto
-
-```
-src/
-└── server.ts
-```
-
-## Autor 
-#### Alan Dias 
-Projeto desenvolvido para fins de estudo com Node.js, Fastify e TypeScript.
+* criação de APIs REST;
+* rotas com Fastify;
+* integração entre front-end e back-end;
+* consumo de APIs utilizando `fetch`;
+* organização de um projeto com Node.js e TypeScript.
