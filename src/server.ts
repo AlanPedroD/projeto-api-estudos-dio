@@ -1,11 +1,19 @@
 import fastify from "fastify";
 import cors from "@fastify/cors";
+import fastifyStatic from "@fastify/static";
+import path from "node:path";
 
 // const server = fastify({ logger: true });
 const server = fastify({ logger: false });
 
 server.register(cors, {
   origin: "*"
+});
+
+// Servir arquivos da pasta "public"
+server.register(fastifyStatic, {
+  root: path.join(process.cwd(), "public"),
+  prefix: "/"
 });
 
 const teams = [
@@ -29,30 +37,58 @@ const teams = [
     country: "Alemanha",
     base: "Brackley",
     championships: 8
+  },
+  {
+    id: 4,
+    name: "Red Bull Racing",
+    country: "Áustria",
+    base: "Milton Keynes",
+    championships: 6
+  },
+  {
+    id: 5,
+    name: "Williams",
+    country: "Reino Unido",
+    base: "Grove",
+    championships: 9
   }
 ];
 
 const drivers = [
   {
     id: 1,
-    name: "Lando Norris",
-    nationality: "Britânico",
+    name: "Ayrton Senna",
+    nationality: "Brasileiro",
     teamId: 1,
-    championships: 0
+    championships: 3
   },
   {
     id: 2,
-    name: "Charles Leclerc",
-    nationality: "Monegasco",
+    name: "Fernando Alonso",
+    nationality: "Espanhol",
     teamId: 2,
-    championships: 0
+    championships: 2
   },
   {
     id: 3,
-    name: "George Russell",
-    nationality: "Britânico",
+    name: "Sebastian Vettel",
+    nationality: "Alemão",
     teamId: 3,
-    championships: 0
+    championships: 4
+  },
+  {
+    id: 4,
+    name: "Max Verstappen",
+    nationality: "Holandês",
+    teamId: 4,
+    championships: 4
+  },
+  {
+    id: 5,
+    name: "Lewis Hamilton",
+    nationality: "Britânico",
+    teamId: 5,
+    championships: 7
   }
 ];
 
@@ -115,6 +151,19 @@ server.get<{ Params: DriverParams }>("/drivers/:id", async (request, response) =
   return { driver };
 });
 
-server.listen({ port: 3333 }, () => {
-  console.log("🚀 Servidor iniciado em http://localhost:3333");
-});
+const port = Number(process.env.PORT) || 3333;
+
+server.listen(
+  {
+    port,
+    host: "0.0.0.0"
+  },
+  (err) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+
+    console.log(`🚀 Servidor iniciado em http://localhost:${port}`);
+  }
+);
