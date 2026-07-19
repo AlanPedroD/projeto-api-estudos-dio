@@ -1,7 +1,7 @@
 {
   "name": "movies-api",
   "version": "1.0.0",
-  "description": "REST API desenvolvida com Node.js, Fastify e TypeScript para gerenciamento de filmes.",
+  "description": "REST API desenvolvida com Node.js, Fastify e TypeScript",
   "main": "index.js",
   "scripts": {
     "dist": "tsup src",
