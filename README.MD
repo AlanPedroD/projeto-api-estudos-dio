@@ -1,41 +1,65 @@
 # 🏎️ F1 Dashboard API
 
-Projeto desenvolvido durante os estudos de **Node.js** e **TypeScript**, acompanhando um curso sobre criação de APIs com **Fastify**.
+Projeto desenvolvido durante os estudos de **Node.js**, **TypeScript** e **Fastify**, acompanhando um curso sobre criação de APIs REST.
 
-A aplicação disponibiliza uma API simples com informações sobre equipes e pilotos da Fórmula 1 e também possui uma interface web para consumir esses dados.
+A aplicação disponibiliza uma API com informações sobre equipes e pilotos da Fórmula 1 e uma interface web para visualizar esses dados de forma simples e intuitiva.
 
-## 🚀 Tecnologias utilizadas
+---
 
-* Node.js
-* TypeScript
-* Fastify
-* HTML5
-* CSS3
-* JavaScript
+## 🚀 Demonstração
 
-## 📂 Funcionalidades
+🌐 **Acesse a aplicação:**
 
-* Listar equipes de Fórmula 1
-* Buscar uma equipe pelo ID
-* Listar pilotos
-* Buscar um piloto pelo ID
-* Interface web para visualizar os dados da API
+**https://projeto-api-estudos-dio.onrender.com/**
 
-## 📡 Endpoints
 
-| Método | Endpoint       | Descrição                |
-| ------ | -------------- | ------------------------ |
-| GET    | `/teams`       | Lista todas as equipes   |
-| GET    | `/teams/:id`   | Busca uma equipe pelo ID |
-| GET    | `/drivers`     | Lista todos os pilotos   |
-| GET    | `/drivers/:id` | Busca um piloto pelo ID  |
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- Node.js
+- TypeScript
+- Fastify
+- HTML5
+- CSS3
+- JavaScript
+
+---
+
+## ✨ Funcionalidades
+
+- Listagem de equipes da Fórmula 1
+- Busca de equipe por ID
+- Listagem de pilotos
+- Busca de piloto por ID
+- Interface web integrada à API
+- Consumo da API utilizando `fetch()`
+
+---
+
+## 📡 Endpoints da API
+
+| Método | Endpoint | Descrição |
+|---------|----------|-----------|
+| GET | `/teams` | Lista todas as equipes |
+| GET | `/teams/:id` | Busca uma equipe pelo ID |
+| GET | `/drivers` | Lista todos os pilotos |
+| GET | `/drivers/:id` | Busca um piloto pelo ID |
+
+---
 
 ## ▶️ Como executar o projeto
 
 Clone o repositório:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/AlanPedroD/projeto-api-estudos-dio.git
+```
+
+Acesse a pasta do projeto:
+
+```bash
+cd projeto-api-estudos-dio
 ```
 
 Instale as dependências:
@@ -44,7 +68,7 @@ Instale as dependências:
 npm install
 ```
 
-Inicie a aplicação:
+Execute a aplicação:
 
 ```bash
 npm run dev
@@ -56,18 +80,42 @@ Abra o navegador em:
 http://localhost:3333
 ```
 
-## 📸 Interface
+---
 
-A página inicial permite visualizar as equipes e os pilotos através dos botões disponíveis na interface.
+## 📁 Estrutura do projeto
 
-> Após iniciar a aplicação, basta acessar `http://localhost:3333` no navegador.
+```
+.
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── src/
+│   └── server.ts
+│
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+---
 
 ## 📚 Objetivo
 
-Este projeto foi desenvolvido com fins de aprendizado, colocando em prática conceitos como:
+Este projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais do desenvolvimento back-end utilizando Node.js e TypeScript, incluindo:
 
-* criação de APIs REST;
-* rotas com Fastify;
-* integração entre front-end e back-end;
-* consumo de APIs utilizando `fetch`;
-* organização de um projeto com Node.js e TypeScript.
+- criação de APIs REST com Fastify;
+- definição de rotas;
+- consumo de APIs com JavaScript;
+- integração entre front-end e back-end;
+- disponibilização da aplicação na web utilizando o Render.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Alan Dias**.
+
+GitHub:
+**https://github.com/AlanPedroD**
