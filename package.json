@@ -1,15 +1,20 @@
 {
-  "name": "movies-api",
+  "name": "f1-dashboard-api",
   "version": "1.0.0",
   "description": "REST API desenvolvida com Node.js, Fastify e TypeScript",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dist": "tsup src",
-    "start:dev": "tsx --env-file=.env src/server.ts",
-    "start:watch": "tsx watch --env-file=.env  src/server.ts",
-    "start:dist": "npm run dist && node dist/server.js"
+    "build": "tsup src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "typescript",
+    "fastify",
+    "api",
+    "formula1"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
