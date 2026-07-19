@@ -10,7 +10,7 @@ A aplicação disponibiliza uma API com informações sobre equipes e pilotos da
 
 🌐 **Acesse a aplicação:**
 
-**https://projeto-api-estudos-dio.onrender.com/**
+[Fórmula 1 Dashboard](https://projeto-api-estudos-dio.onrender.com/)
 
 
 ---
