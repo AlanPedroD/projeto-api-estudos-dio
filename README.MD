@@ -1,6 +1,8 @@
 # 🏎️ F1 Dashboard API
 
-Projeto desenvolvido durante os estudos de **Node.js**, **TypeScript** e **Fastify**, acompanhando um curso sobre criação de APIs REST.
+Projeto desenvolvido durante o **Bootcamp Sem Parar Corpay - Back-end do Zero à Prática!**, com o objetivo de praticar a criação de APIs REST utilizando **Node.js**, **TypeScript** e **Fastify**.
+
+Como evolução do projeto proposto no bootcamp, desenvolvi uma interface web em **HTML**, **CSS** e **JavaScript** para consumir a API, permitindo visualizar as informações de forma mais intuitiva e tornando a aplicação acessível diretamente pelo navegador.
 
 A aplicação disponibiliza uma API com informações sobre equipes e pilotos da Fórmula 1 e uma interface web para visualizar esses dados de forma simples e intuitiva.
 
